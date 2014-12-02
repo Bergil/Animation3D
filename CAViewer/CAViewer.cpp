@@ -88,13 +88,16 @@ void CAViewer::draw()
     glPushMatrix();
 	end = std::chrono::system_clock::now();
 	std::chrono::duration<double> elapsed_seconds = end-start;
+	auto framemilliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(elapsed_seconds);
+	
     float animTime = m_bvh->getFrameTime();
-    if( elapsed_seconds.count() >= animTime){
+    if( framemilliseconds.count() >= animTime){
 		start = std::chrono::system_clock::now();
+		//framemilliseconds -= animTime;
 		animate();
 	}
 	//bvhDrawGL(*m_bvh, m_bvhFrame);
-	bvhTransitionDrawGL(*m_bvh, m_bvhFrame, *m_bvh, (m_bvhFrame+1)%m_bvh->getNumFrame(), elapsed_seconds.count()/animTime);
+	bvhTransitionDrawGL(*m_bvh, m_bvhFrame, *m_bvh, (m_bvhFrame+1)%m_bvh->getNumFrame(), framemilliseconds.count()/1000.0/animTime);
 		
     glPopMatrix();
 
@@ -155,18 +158,19 @@ void CAViewer::bvhTransitionDrawGLRec(const BVHJoint& bvhSRC, int frameNumberSRC
 		}else if(chan->isTranslation()){
 			switch(chan->getAxis()){
 				case AXIS_X : 
-							vecTrans[0] = chan->getData(frameNumberSRC)*interpolationValue + chan->getData(frameNumberDST)*(1-interpolationValue);
+							vecTrans[0] = chan->getData(frameNumberSRC)*(1-interpolationValue) + chan->getData(frameNumberDST)*(interpolationValue);
 							break;
 				case AXIS_Y : 
-							vecTrans[1] = chan->getData(frameNumberSRC)*interpolationValue + chan->getData(frameNumberDST)*(1-interpolationValue);
+							vecTrans[1] = chan->getData(frameNumberSRC)*(1-interpolationValue) + chan->getData(frameNumberDST)*(interpolationValue);
 							break;
 				case AXIS_Z : 
-							vecTrans[2] = chan->getData(frameNumberSRC)*interpolationValue + chan->getData(frameNumberDST)*(1-interpolationValue);
+							vecTrans[2] = chan->getData(frameNumberSRC)*(1-interpolationValue) + chan->getData(frameNumberDST)*(interpolationValue);
 							break;
 			}		
 		}
 	}
-	TQsrc = math::TQuaternion<float>::slerp(TQsrc, TQdst, interpolationValue);			
+	TQsrc = math::TQuaternion<float>::slerp(TQsrc, TQdst, interpolationValue);
+	glTranslatef(vecTrans[0], vecTrans[1], vecTrans[2]);		
 	glRotatef(convertRadianToDegree(TQsrc.angle()), TQsrc.axis()[0], TQsrc.axis()[1], TQsrc.axis()[2] );
 	draw_cube();
 	for(int i = 0; i < bvhSRC.getNumChild(); i++){
