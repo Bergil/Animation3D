@@ -93,16 +93,89 @@ void CAViewer::draw()
 		start = std::chrono::system_clock::now();
 		animate();
 	}
-	bvhDrawGL(*m_bvh, m_bvhFrame);
+	//bvhDrawGL(*m_bvh, m_bvhFrame);
+	bvhTransitionDrawGL(*m_bvh, m_bvhFrame, *m_bvh, (m_bvhFrame+1)%m_bvh->getNumFrame(), elapsed_seconds.count()/animTime);
+		
     glPopMatrix();
 
 }
+float convertDegreeToRadian(float degree){
+	return (degree/180)*M_PI;
+}
+
+float convertRadianToDegree(float radian){
+	return (radian*180)/M_PI;
+}
 
 void CAViewer::bvhTransitionDrawGL(const BVH& bvhSRC, int frameNumberSRC, const BVH& bvhDST, int frameNumberDST, const float interpolationValue){
-	
-	
-	
+	bvhTransitionDrawGLRec(*bvhSRC.getRoot(), frameNumberSRC, *bvhDST.getRoot(), frameNumberDST,interpolationValue);
+
 }
+void CAViewer::bvhTransitionDrawGLRec(const BVHJoint& bvhSRC, int frameNumberSRC, const BVHJoint& bvhDST, int frameNumberDST, const float interpolationValue){
+	
+	glPushMatrix();
+	
+	math::TQuaternion<float> TQsrc;
+	math::TQuaternion<float> TQdst;
+	math::Vec3<float> vecTrans(0.0,0.0,0.0);
+	math::Vec3<float> vecAxisX(1.0,0.0,0.0);
+	math::Vec3<float> vecAxisY(0.0,1.0,0.0);
+	math::Vec3<float> vecAxisZ(0.0,0.0,1.0);
+	float v[3];
+	bvhSRC.getOffset(v[0], v[1], v[2]);
+	glBegin(GL_LINES);
+	glVertex3f(0,0,0);
+	glVertex3f(v[0], v[1], v[2]);
+	glEnd();
+	glTranslatef(v[0], v[1], v[2]);
+	 
+	
+	for(int i = 0; i < bvhSRC.getNumChannel(); i++){
+		chara::BVHChannel* chan = bvhSRC.getChannel(i);
+		if(chan->isRotation()){
+			switch(chan->getAxis()){
+				case AXIS_X : 
+							TQsrc *= math::TQuaternion<float>(vecAxisX, convertDegreeToRadian(chan->getData(frameNumberSRC)));
+							TQdst *= math::TQuaternion<float>(vecAxisX, convertDegreeToRadian(chan->getData(frameNumberDST)));
+							//glRotatef(chan->getData(frameNumber),1,0,0);
+							break;
+				case AXIS_Y : 
+							TQsrc *= math::TQuaternion<float>(vecAxisY, convertDegreeToRadian(chan->getData(frameNumberSRC)));
+							TQdst *= math::TQuaternion<float>(vecAxisY, convertDegreeToRadian(chan->getData(frameNumberDST)));
+
+							//glRotatef(chan->getData(frameNumber),0,1,0);
+							break;
+				case AXIS_Z : 
+							TQsrc *= math::TQuaternion<float>(vecAxisZ, convertDegreeToRadian(chan->getData(frameNumberSRC)));
+							TQdst *= math::TQuaternion<float>(vecAxisZ, convertDegreeToRadian(chan->getData(frameNumberDST)));
+							//glRotatef(chan->getData(frameNumber),0,0,1);
+							break;
+			}
+					
+		}else if(chan->isTranslation()){
+			switch(chan->getAxis()){
+				case AXIS_X : 
+							vecTrans[0] = chan->getData(frameNumberSRC)*interpolationValue + chan->getData(frameNumberDST)*(1-interpolationValue);
+							break;
+				case AXIS_Y : 
+							vecTrans[1] = chan->getData(frameNumberSRC)*interpolationValue + chan->getData(frameNumberDST)*(1-interpolationValue);
+							break;
+				case AXIS_Z : 
+							vecTrans[2] = chan->getData(frameNumberSRC)*interpolationValue + chan->getData(frameNumberDST)*(1-interpolationValue);
+							break;
+			}		
+		}
+	}
+	TQsrc = math::TQuaternion<float>::slerp(TQsrc, TQdst, interpolationValue);			
+	glRotatef(convertRadianToDegree(TQsrc.angle()), TQsrc.axis()[0], TQsrc.axis()[1], TQsrc.axis()[2] );
+	draw_cube();
+	for(int i = 0; i < bvhSRC.getNumChild(); i++){
+		bvhTransitionDrawGLRec(*bvhSRC.getChild(i), frameNumberSRC, *bvhDST.getChild(i), frameNumberDST, interpolationValue );
+	}
+	glPopMatrix();
+}
+
+
 
 void CAViewer::bvhDrawGL(const BVH& b, int frameNumber){	
 	bvhDrawGLRec(*b.getRoot(), frameNumber);

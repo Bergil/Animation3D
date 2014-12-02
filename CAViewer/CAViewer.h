@@ -24,6 +24,8 @@ public:
 	virtual void specialKeyPressed(int key, int x, int y);
 	virtual void bvhDrawGLRec(const chara::BVHJoint& b, int frameNumber);
 	virtual void bvhDrawGL(const chara::BVH& b, int frameNumber);
+	virtual void bvhTransitionDrawGLRec(const chara::BVHJoint& bvhSRC, int frameNumberSRC, const chara::BVHJoint& bvhDST, int frameNumberDST, const float interpolationValue);
+
 	virtual void bvhTransitionDrawGL(const chara::BVH& bvhSRC, int frameNumberSRC, const chara::BVH& bvhDST, int frameNumberDST, const float interpolationValue);
 
 
