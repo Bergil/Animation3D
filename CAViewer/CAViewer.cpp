@@ -12,6 +12,7 @@
 #include <BVHChannel.h>
 #include <Mat4.h>
 #include <Quaternion.h>
+#include <CASkeleton.h>
 
 
 using namespace chara;
@@ -114,6 +115,8 @@ float convertRadianToDegree(float radian){
 void CAViewer::bvhTransitionDrawGL(const BVH& bvhSRC, int frameNumberSRC, const BVH& bvhDST, int frameNumberDST, const float interpolationValue){
 	bvhTransitionDrawGLRec(*bvhSRC.getRoot(), frameNumberSRC, *bvhDST.getRoot(), frameNumberDST,interpolationValue);
 	float i = calculDistanceEntrePoses(bvhSRC,  frameNumberSRC,bvhDST,frameNumberDST);
+	//FAIRE APPEL SKELETON
+	//CASkeleton c(bvhSRC); /*OK*/
 	cout<<"calculDistanceEntrePoses = "<<i<<endl;
 }
 void CAViewer::bvhTransitionDrawGLRec(const BVHJoint& bvhSRC, int frameNumberSRC, const BVHJoint& bvhDST, int frameNumberDST, const float interpolationValue){
