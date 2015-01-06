@@ -1,28 +1,43 @@
-#include "dynamicworld"
+#include "dynamicworld.h"
 
-DynamicWorld()
+using namespace math; 
+using namespace std;
+
+DynamicWorld::DynamicWorld()
 {
+	init(0,0);
+}
 
+DynamicWorld::DynamicWorld(int dimX,int dimY)
+{
+	init(dimX,dimY);
 }
 		
-void init(const int dimX, const int dimY)
+void DynamicWorld::init(int dimX, int dimY)
 {
-
-}
-
-void computeOneStep(const float dt)     // à appeler depus la fonction animate de la class Viewer
-{
-	for(int i = 0; i < m_p.size(); i++)
+	for (int i = 0; i < dimY; i++)
 	{
-		m_p.computeOneStep(dt);
+		for (int j = 0; j < dimX; j++)
+		{
+			Particle p(1.0, Vec3f(i,j, 0.0));
+			m_p.push_back(p);
+		}
 	}
 }
 
-void draw() const;
+void DynamicWorld::computeOneStep(const float dt)     // à appeler depus la fonction animate de la class Viewer
 {
-	for(int i = 0; i < m_p.size(); i++)
+	for(unsigned int i = 0; i < m_p.size(); i++)
 	{
-		glTranslatef(m_p.getP().x, m_p.getP().y, m_p.getP().z);
+		m_p[i].computeOneStep(dt);
+	}
+}
+
+void DynamicWorld::draw()const
+{
+	for(unsigned int i = 0; i < m_p.size(); i++)
+	{
+		glTranslatef(m_p[i].getP().x, m_p[i].getP().y, m_p[i].getP().z);
 		draw_cube();
 	}
 

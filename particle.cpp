@@ -1,5 +1,6 @@
 #include particule.h
 
+using namespace math;
 
 Particle::addForce(const Vec3f& af)
 {
