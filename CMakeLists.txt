@@ -72,6 +72,12 @@ SET( CHARA_FILES
 			./src/CAViewer/Viewer.cpp
 			./src/CAViewer/CAViewer.h
 			./src/CAViewer/CAViewer.cpp
+			./src/CAViewer/dynamicworld.cpp
+			./src/CAViewer/dynamicworld.h
+			./src/CAViewer/particle.cpp
+			./src/CAViewer/particle.h
+			./src/CAViewer/spring.cpp
+			./src/CAViewer/spring.h
 			./src/CAViewer/main.cpp
 )
 
