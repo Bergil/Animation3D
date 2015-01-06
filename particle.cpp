@@ -1,15 +1,33 @@
 #include particule.h
 
 
-Particle::Particle()
+Particle::addForce(const Vec3f& af)
 {
-
+	F += af;
 }
 
-void Particle::addForce(const Vec3f& af){
-	
+void Particle::computeOneStep(const float dt)
+{
+	V = V + dt * (F/m);	
+	P = P + dt * V;
 }
 
-void computeOneStep(const float dt){
-	
+Vec3f Particle::getP()
+{
+	return P;
 }
+
+Vec3f Particle::getV()
+{
+	return V;
+}
+
+Vec3f Particle::getF()
+{
+	return F;
+}
+
+float Particle::getMass()
+{
+	return mass;
+}	
