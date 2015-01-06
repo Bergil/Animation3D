@@ -20,12 +20,10 @@ void computeOneStep(const float dt)     // à appeler depus la fonction animate 
 
 void draw() const;
 {
-	glBegin( GL_LINES );
 	for(int i = 0; i < m_p.size(); i++)
 	{
 		glTranslatef(m_p.getP().x, m_p.getP().y, m_p.getP().z);
 		draw_cube();
 	}
-	glEnd();
 
 }     
