@@ -18,10 +18,10 @@ class Particle
 		void addForce(const math::Vec3f& af);
 		void computeOneStep(const float dt);        // mise à jour de la position et de la vitesse en fonction de f et de dt
 
-		math::Vec3f getP();
-		math::Vec3f getV();
-		math::Vec3f getF();
-		float getMass();
+		math::Vec3f getP()const;
+		math::Vec3f getV()const;
+		math::Vec3f getF()const;
+		float getMass()const;
 };
 
 

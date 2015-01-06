@@ -39,9 +39,9 @@ void CAViewer::init()
 
 	//std::string fn_front = "G:/alex/code/CharAnim_m2pro/data/OneArm.bvh";
 	//std::string fn_front = "/home/pers/alexandre.meyer/code/CharAnim_m2pro/data/OneArm.bvh";
-	std::string fn_front = "../data/OneArm.bvh";
+	//std::string fn_front = "../data/OneArm.bvh";
 
-	if (fn_front!="")
+	/*if (fn_front!="")
 	{
 		std::string current_file( fn_front );
 		printf("%s\n", current_file.c_str());
@@ -51,8 +51,8 @@ void CAViewer::init()
 		cout<<*m_bvh<<endl;
 		cout<<"------------"<<endl;
 	}
-	else cout<<"No BVH\n";
-	dyna.init(1,1);
+	else cout<<"No BVH\n";*/
+	dyna.init(10,10);
     //m_target.set( 10, 10, 0);
 
 }
@@ -63,11 +63,8 @@ void CAViewer::draw()
 {
 	glPushMatrix();
 	//if (m_skel) m_skel->render();
-
-    glPushMatrix();
     
     dyna.draw();
-    glPopMatrix();
 
 	glPopMatrix();
 }
@@ -79,7 +76,7 @@ void CAViewer::keyPressed(unsigned char key, int x, int y)
 	bool handled = false;
 	if ((key=='n'))
 	{
-		++m_bvhFrame;
+		animate();
 		//m_skel->setPostureFromBVH( *m_bvh, m_bvhFrame);
 		handled = true;
 	}
@@ -156,13 +153,7 @@ void CAViewer::specialKeyPressed(int key, int x, int y)
 
 void CAViewer::animate()
 {
-	if (m_bvh)
-	{
-		++m_bvhFrame;
-		if (m_bvhFrame>=m_bvh->getNumFrame()) m_bvhFrame=0;
-		//m_skel->setPostureFromBVH( *m_bvh, m_bvhFrame);
-	}
-	dyna.computeOneStep(0.1);
+	dyna.computeOneStep(1);
 }
 
 

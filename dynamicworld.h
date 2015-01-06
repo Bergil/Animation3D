@@ -7,12 +7,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
+#include <glut.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <Viewer.h>
 
 class DynamicWorld
 {
 	protected:
 		std::vector<Particle> m_p;
 		std::vector<Spring> m_s;
+		math::Vec3f gravity;
 
 	public:
 		DynamicWorld();
