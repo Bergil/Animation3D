@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/Animation3D/AnimWater/CharAnim_m2pro/src/CACore/Array2D.cpp
+Array2D.h
+/home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/Animation3D/AnimWater/CharAnim_m2pro/src/CACore/Array2D.h
+
+/home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/Animation3D/AnimWater/CharAnim_m2pro/src/CACore/Array2D.h
+string
+-
+vector
+-
+cassert
+-
+fstream
+-
+iostream
+-
+
