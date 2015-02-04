@@ -351,3 +351,93 @@ Linking C executable cmTryCompileExec2294303935
 make[1]: quittant le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
 
 
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3521657849/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3521657849.dir/build.make CMakeFiles/cmTryCompileExec3521657849.dir/build
+make[1]: entrant dans le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+/usr/bin/cmake -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3521657849.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec3521657849.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3521657849
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3521657849.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec3521657849.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3521657849 -rdynamic -lX11 -lXext 
+make[1]: quittant le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3804539674/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3804539674.dir/build.make CMakeFiles/cmTryCompileExec3804539674.dir/build
+make[1]: entrant dans le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+/usr/bin/cmake -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3804539674.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec3804539674.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3804539674
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3804539674.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec3804539674.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3804539674 -rdynamic 
+make[1]: quittant le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2801050403/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2801050403.dir/build.make CMakeFiles/cmTryCompileExec2801050403.dir/build
+make[1]: entrant dans le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+/usr/bin/cmake -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2801050403.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec2801050403.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2801050403
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2801050403.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec2801050403.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2801050403 -rdynamic 
+make[1]: quittant le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1312470502/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1312470502.dir/build.make CMakeFiles/cmTryCompileExec1312470502.dir/build
+make[1]: entrant dans le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+/usr/bin/cmake -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1312470502.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec1312470502.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1312470502
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1312470502.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec1312470502.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1312470502 -rdynamic 
+make[1]: quittant le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3346368015/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3346368015.dir/build.make CMakeFiles/cmTryCompileExec3346368015.dir/build
+make[1]: entrant dans le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+/usr/bin/cmake -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3346368015.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec3346368015.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3346368015
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3346368015.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec3346368015.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3346368015 -rdynamic 
+make[1]: quittant le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1255516128/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1255516128.dir/build.make CMakeFiles/cmTryCompileExec1255516128.dir/build
+make[1]: entrant dans le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+/usr/bin/cmake -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1255516128.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec1255516128.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1255516128
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1255516128.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec1255516128.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1255516128 -rdynamic -lICE 
+make[1]: quittant le répertoire « /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimWater/CharAnim_m2pro/build/CMakeFiles/CMakeTmp »
+
+

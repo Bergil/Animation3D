@@ -21,9 +21,7 @@ namespace chara {
 			//! Une animation BVH est repérée par un identifiant=un entier 
 			typedef int BVH_ID;
 			
-			CAGrapheNode();
-			
-			
+			CAGrapheNode();	
 			
    };
    

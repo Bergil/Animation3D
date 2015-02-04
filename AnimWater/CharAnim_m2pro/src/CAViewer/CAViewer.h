@@ -17,7 +17,7 @@ public:
 	virtual ~CAViewer ();
 	virtual void draw();
 	virtual void help();
-	virtual void init();
+	virtual void init(int argc, char **argv);
 	virtual void animate();
 	virtual void keyPressed(unsigned char key, int x, int y);
 	virtual void specialKeyPressed(int key, int x, int y);

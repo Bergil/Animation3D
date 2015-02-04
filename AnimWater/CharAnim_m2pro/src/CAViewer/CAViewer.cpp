@@ -33,30 +33,25 @@ CAViewer::~CAViewer()
 
 
 
-void CAViewer::init()
+void CAViewer::init(int argc, char **argv)
 {
 	Viewer::init();
 
-	glPushMatrix();
-	int largeur = 100;
-	int longueur = 100;
-	/*end = std::chrono::system_clock::now();
-	std::chrono::duration<double> elapsed_seconds = end-start;
-	auto framemilliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(elapsed_seconds);*/
-	water.init(longueur, largeur, 10, 0.00001);
-	for(int i = longueur/10; i < longueur/10+10; i++){
-		for(int j = largeur/10; j < largeur/10+10; j++){
-			water.setH(i,j, 20);
+	int largeur = 50;
+	int longueur = 50;
+	water.init(longueur, largeur, 10, 0.01);
+	for(int i = longueur/2-5; i < longueur/2+5; i++){
+		for(int j = largeur/2-5; j < largeur/2+5; j++){
+			water.setN(i,j, 15);
 		}
 	}
-	
-   /* float animTime = m_bvh->getFrameTime();
-    if( framemilliseconds.count() >= animTime){
-		start = std::chrono::system_clock::now();
-		animate();
-	}*/
-	
-	glPopMatrix();
+	if(argc > 1 && strcmp(argv[1], "NF") == 0)
+	for(int i = 0; i < longueur; i++){
+		for(int j = 0; j < largeur; j++){
+			water.setG(i,j, sin((i+j)*3.1415926/longueur/2)*5);
+			
+		}
+	}
 }
 
 
@@ -65,7 +60,7 @@ void CAViewer::draw()
 {
 	glPushMatrix();
 	//if (m_skel) m_skel->render();
-
+	animate();
     water.draw();
 	
 	glPopMatrix();
@@ -76,7 +71,7 @@ void CAViewer::draw()
 void CAViewer::keyPressed(unsigned char key, int x, int y)
 {
 	bool handled = false;
-	if ((key=='n'))
+	if ((key=='z'))
 	{
 		animate();
 		//m_skel->setPostureFromBVH( *m_bvh, m_bvhFrame);
@@ -157,6 +152,7 @@ void CAViewer::animate()
 {
 	//for (int i=0; i< 100; i++)
 		water.ShallowWaterStep();
+		
 }
 
 

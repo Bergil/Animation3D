@@ -134,9 +134,9 @@ void Viewer::init()
 
 	glShadeModel(GL_SMOOTH);
 
-	LightPosition[0] = 100.0f;
-	LightPosition[1] = 300.0f;
-	LightPosition[2] = 100.0f;
+	LightPosition[0] = 50.0f;
+	LightPosition[1] = 50.0f;
+	LightPosition[2] = 50.0f;
 	LightPosition[3] = 1.0f;
 
 	const float ambiant=0.02;
@@ -145,9 +145,9 @@ void Viewer::init()
 	GLfloat LightAmbient[]  = { ambiant,ambiant,ambiant,1.f};
 	GLfloat LightDiffuse[]  = {diffus,diffus,diffus, 1.0f};
 	GLfloat LightSpecular[]  = { spec, spec, spec, 1.0f};
-	const GLfloat light_ambient[4]	= {0.1f, 0.1f, 0.1f, 1.0f};
-	const GLfloat light_diffuse[4]	= {.9f, .9f, .9f, 1.0f};
-	const GLfloat light_specular[4] = {0.f, 0.f, 0.f, 1.0f};
+	const GLfloat light_ambient[4]	= {ambiant, ambiant, ambiant, 1.0f};
+	const GLfloat light_diffuse[4]	= {diffus, diffus, diffus, 1.0f};
+	const GLfloat light_specular[4] = {1.0, 1.0, 1.0, 1.0f};
 	glLightfv(GL_LIGHT0, GL_AMBIENT,	light_ambient);
 	glLightfv(GL_LIGHT0, GL_SPECULAR,	light_specular);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE,	light_diffuse);

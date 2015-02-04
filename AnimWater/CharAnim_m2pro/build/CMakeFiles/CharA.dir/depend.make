@@ -9,6 +9,8 @@ CMakeFiles/CharA.dir/src/CACore/CASkeleton.o: ../src/CALoader/BVHAxis.h
 CMakeFiles/CharA.dir/src/CACore/CASkeleton.o: ../src/CACore/CASkeleton.cpp
 CMakeFiles/CharA.dir/src/CACore/CASkeleton.o: ../src/CACore/CASkeleton.h
 
+CMakeFiles/CharA.dir/src/CACore/ShallowWater.o: ../src/CAMath/Vec2.h
+CMakeFiles/CharA.dir/src/CACore/ShallowWater.o: ../src/CAMath/Vec3.h
 CMakeFiles/CharA.dir/src/CACore/ShallowWater.o: ../src/CACore/Array2D.h
 CMakeFiles/CharA.dir/src/CACore/ShallowWater.o: ../src/CACore/ShallowWater.cpp
 CMakeFiles/CharA.dir/src/CACore/ShallowWater.o: ../src/CACore/ShallowWater.h

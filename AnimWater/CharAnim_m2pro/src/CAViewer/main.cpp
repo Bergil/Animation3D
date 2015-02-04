@@ -15,7 +15,7 @@ CAViewer viewer;
 //! A appeller juste avant la boucle principale (Main Loop)
 void GLInit(GLsizei Width, GLsizei Height)
 {
-	viewer.init();
+	viewer.init(0, 0);
 }
 
 //! Quand la fenetre est 'resizée'
@@ -106,7 +106,7 @@ int main(int argc, char **argv)
 	//glutFullScreen();
 
 	// Quand il n'y a aucun évenement, on affiche quand même la scène
-	//glutIdleFunc(&GLUpdate);
+	glutIdleFunc(&GLUpdate);
 
 	// Quand la fenetre change de taille
 	glutReshapeFunc(&GLResize);
@@ -125,7 +125,8 @@ int main(int argc, char **argv)
 
 
 	// Notre init:
-	GLInit(640, 480);
+	//GLInit(640, 480);
+	viewer.init(argc, argv);
 
 	// La boucle principale
 	glutMainLoop();
