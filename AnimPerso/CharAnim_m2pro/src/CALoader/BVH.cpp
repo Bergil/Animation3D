@@ -72,6 +72,17 @@ BVH::BVH(const std::string& filename, bool enableEndSite)
 		assert(0);
     }
 }
+
+BVH::BVH(const BVH & bvh){
+	m_numFrames = bvh.getNumFrame();
+	m_frameTime = bvh.getFrameTime();
+	
+	for(auto i : bvh.m_joints){
+		m_joints.push_back(new chara::BVHJoint(*i));
+	}
+	m_root = m_joints[0];
+}
+
 //-----------------------------------------------------------------------------
 BVH::~BVH()
 {

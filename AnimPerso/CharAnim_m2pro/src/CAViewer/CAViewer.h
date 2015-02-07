@@ -1,4 +1,4 @@
-
+#include <random>
 #include <Viewer.h>
 #include "BVHTools.h"
 #include <chrono>
@@ -6,6 +6,8 @@
 #include <BVHJoint.h>
 #include <Vec3.h>
 #include "CASkeleton.h"
+#include "CAMotionGraph.h"
+#include <memory>
 
 #ifndef _CAVIEWER_H
 #define _CAVIEWER_H
@@ -13,7 +15,7 @@
 class CAViewer : public Viewer
 {
 public:
-	CAViewer() : Viewer(), isPhysics(false), m_bvh(NULL), m_bvhFrame(0)
+	CAViewer() : Viewer(), isPhysics(false), m_bvhFrame(0), gen(rd())
 	{}
 
 	virtual ~CAViewer ();
@@ -35,13 +37,15 @@ protected :
 	bool isPhysics;
 
 	//! mocap data
-	chara::BVH*			m_bvh;
+	std::unique_ptr<CAMotionGraph> m_motiongraph;
 	//! mocap frame number (when mocap is used)
+	chara::CAGrapheNode::GrapheNodeID m_idGrapheNode = 0;
 	int m_bvhFrame;
 	std::chrono::time_point<std::chrono::system_clock> start, end;
     //! target point for the IK
     math::Vec3f m_target;
-
+	std::random_device rd;
+	std::mt19937 gen;
 	/// skeleton (build from the mocap-BVH data m_bvh)
 	chara::CASkeleton	m_skel;
 

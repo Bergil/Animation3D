@@ -45,7 +45,7 @@ CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 CMAKE_SOURCE_DIR = /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build
+CMAKE_BINARY_DIR = /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

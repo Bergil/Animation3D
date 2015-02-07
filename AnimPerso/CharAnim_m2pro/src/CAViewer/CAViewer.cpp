@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -16,7 +14,6 @@
 
 using namespace chara;
 using namespace std;
-
 
 void CAViewer::help()
 {
@@ -35,24 +32,17 @@ void CAViewer::init()
 {
 	Viewer::init();
 	start = std::chrono::system_clock::now();
-	//std::string fn_front = "G:/alex/code/CharAnim_m2pro/data/OneArm.bvh";
-	//std::string fn_front = "/home/pers/alexandre.meyer/code/CharAnim_m2pro/data/OneArm.bvh";
-	//std::string fn_front = "../data/OneArm.bvh";
 	std::string fn_front = "../data/danse.bvh";
-
-	if (fn_front!="")
-	{
-		std::string current_file( fn_front );
-		printf("%s\n", current_file.c_str());
-		m_bvh = new BVH(current_file.c_str(), true );
-
-		cout<<"BVH"<<endl;
-		cout<<*m_bvh<<endl;
-		cout<<"------------"<<endl;
-	}
-	else cout<<"No BVH\n";
-	m_skel.remplissageSkeleton(m_bvh->getRoot(), -1);
+	std::vector<std::string> listeBVH = {"../data/motionGraph/dancer.bvh",
+											"../data/motionGraph/frapper.bvh",
+											//"../data/motionGraph/marcher.bvh",
+											"../data/motionGraph/null.bvh",
+											"../data/motionGraph/pond.bvh"};
+	
+	m_motiongraph.reset(new CAMotionGraph(listeBVH, 200)); //ici la distance 
+	m_skel.remplissageSkeleton(m_motiongraph.get()->getBVH()[0]->getRoot(), -1);
     m_target.set( 10, 10, 0);
+    
 }
 
 void CAViewer::draw()
@@ -62,13 +52,13 @@ void CAViewer::draw()
 	std::chrono::duration<double> elapsed_seconds = end-start;
 	auto framemilliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(elapsed_seconds);
 	
-    float animTime = m_bvh->getFrameTime();
+    float animTime = m_motiongraph.get()->getBVH()[m_motiongraph->getGrapheNode()[m_idGrapheNode].getIdBVH()]->getFrameTime()*1000;
     if( framemilliseconds.count() >= animTime){
 		start = std::chrono::system_clock::now();
 		animate();
 	}
-	//bvhTransitionDrawGL(*m_bvh, m_bvhFrame, *m_bvh, (m_bvhFrame+1)%m_bvh->getNumFrame(), framemilliseconds.count()/1000.0/animTime);
-	m_skel.setPose(*m_bvh, m_bvhFrame);
+	const CAGrapheNode& actualGN = m_motiongraph->getGrapheNode()[m_idGrapheNode];
+	m_skel.setPose(*m_motiongraph.get()->getBVH()[actualGN.getIdBVH()], actualGN.getNumFrame());
 	m_skel.drawGL();	
     glPopMatrix();
 
@@ -96,7 +86,6 @@ void CAViewer::bvhTransitionDrawGLRec(const BVHJoint& bvhSRC, int frameNumberSRC
 	glVertex3f(v[0], v[1], v[2]);
 	glEnd();
 	glTranslatef(v[0], v[1], v[2]);
-	 
 	
 	for(int i = 0; i < bvhSRC.getNumChannel(); i++){
 		chara::BVHChannel* chan = bvhSRC.getChannel(i);
@@ -144,12 +133,9 @@ void CAViewer::bvhTransitionDrawGLRec(const BVHJoint& bvhSRC, int frameNumberSRC
 	glPopMatrix();
 }
 
-
-
 void CAViewer::bvhDrawGL(const BVH& b, int frameNumber){	
 	bvhDrawGLRec(*b.getRoot(), frameNumber);
 }
-
 
 void CAViewer::bvhDrawGLRec(const BVHJoint& b, int frameNumber){ // la fonction récursive sur le squelette
 	
@@ -224,7 +210,6 @@ void CAViewer::keyPressed(unsigned char key, int x, int y)
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		handled = true;
 	}
-
 	if (!handled)
 	{
 		Viewer::keyPressed(key,x,y);
@@ -232,11 +217,9 @@ void CAViewer::keyPressed(unsigned char key, int x, int y)
 	updateGL();
 }
 
-
 void CAViewer::specialKeyPressed(int key, int x, int y)
 {
 	bool handled = false;
-
 	if (glutGetModifiers()==GLUT_ACTIVE_SHIFT)
 	{
 		switch (key)
@@ -267,8 +250,6 @@ void CAViewer::specialKeyPressed(int key, int x, int y)
 			break;
 		}
 	}
-
-
 	if (!handled)
 	{
         Viewer::specialKeyPressed(key,x,y);
@@ -276,17 +257,11 @@ void CAViewer::specialKeyPressed(int key, int x, int y)
 	updateGL();
 }
 
-
-
 void CAViewer::animate()
 {
-	if (m_bvh)
-	{
-		++m_bvhFrame;
-		if (m_bvhFrame>=m_bvh->getNumFrame()) m_bvhFrame=0;
-		//m_skel->setPostureFromBVH( *m_bvh, m_bvhFrame);
+	const CAGrapheNode& actualGN = m_motiongraph->getGrapheNode()[m_idGrapheNode];
+	if(actualGN.getListIdNext().size() > 0){
+		std::uniform_int_distribution<> dis(0, actualGN.getListIdNext().size()-1 );
+		m_idGrapheNode = actualGN.getListIdNext()[dis(gen)];
 	}
 }
-
-
-

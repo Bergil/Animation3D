@@ -41,7 +41,7 @@ CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 CMAKE_SOURCE_DIR = /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build
+CMAKE_BINARY_DIR = /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CharA.dir/depend.make
@@ -53,8 +53,8 @@ include CMakeFiles/CharA.dir/progress.make
 include CMakeFiles/CharA.dir/flags.make
 
 CMakeFiles/CharA.dir/src/CALoader/BVHChannel.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/CALoader/BVHChannel.o: ../src/CALoader/BVHChannel.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/CharA.dir/src/CALoader/BVHChannel.o: src/CALoader/BVHChannel.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/CALoader/BVHChannel.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/CALoader/BVHChannel.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/CALoader/BVHChannel.cpp
 
@@ -76,8 +76,8 @@ CMakeFiles/CharA.dir/src/CALoader/BVHChannel.o.provides: CMakeFiles/CharA.dir/sr
 CMakeFiles/CharA.dir/src/CALoader/BVHChannel.o.provides.build: CMakeFiles/CharA.dir/src/CALoader/BVHChannel.o
 
 CMakeFiles/CharA.dir/src/CALoader/BVH.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/CALoader/BVH.o: ../src/CALoader/BVH.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_2)
+CMakeFiles/CharA.dir/src/CALoader/BVH.o: src/CALoader/BVH.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/CALoader/BVH.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/CALoader/BVH.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/CALoader/BVH.cpp
 
@@ -99,8 +99,8 @@ CMakeFiles/CharA.dir/src/CALoader/BVH.o.provides: CMakeFiles/CharA.dir/src/CALoa
 CMakeFiles/CharA.dir/src/CALoader/BVH.o.provides.build: CMakeFiles/CharA.dir/src/CALoader/BVH.o
 
 CMakeFiles/CharA.dir/src/CALoader/BVHJoint.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/CALoader/BVHJoint.o: ../src/CALoader/BVHJoint.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_3)
+CMakeFiles/CharA.dir/src/CALoader/BVHJoint.o: src/CALoader/BVHJoint.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/CALoader/BVHJoint.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/CALoader/BVHJoint.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/CALoader/BVHJoint.cpp
 
@@ -122,8 +122,8 @@ CMakeFiles/CharA.dir/src/CALoader/BVHJoint.o.provides: CMakeFiles/CharA.dir/src/
 CMakeFiles/CharA.dir/src/CALoader/BVHJoint.o.provides.build: CMakeFiles/CharA.dir/src/CALoader/BVHJoint.o
 
 CMakeFiles/CharA.dir/src/CACore/CASkeleton.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/CACore/CASkeleton.o: ../src/CACore/CASkeleton.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_4)
+CMakeFiles/CharA.dir/src/CACore/CASkeleton.o: src/CACore/CASkeleton.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/CACore/CASkeleton.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/CACore/CASkeleton.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/CACore/CASkeleton.cpp
 
@@ -145,8 +145,8 @@ CMakeFiles/CharA.dir/src/CACore/CASkeleton.o.provides: CMakeFiles/CharA.dir/src/
 CMakeFiles/CharA.dir/src/CACore/CASkeleton.o.provides.build: CMakeFiles/CharA.dir/src/CACore/CASkeleton.o
 
 CMakeFiles/CharA.dir/src/CACore/CAJoint.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/CACore/CAJoint.o: ../src/CACore/CAJoint.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_5)
+CMakeFiles/CharA.dir/src/CACore/CAJoint.o: src/CACore/CAJoint.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/CACore/CAJoint.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/CACore/CAJoint.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/CACore/CAJoint.cpp
 
@@ -168,8 +168,8 @@ CMakeFiles/CharA.dir/src/CACore/CAJoint.o.provides: CMakeFiles/CharA.dir/src/CAC
 CMakeFiles/CharA.dir/src/CACore/CAJoint.o.provides.build: CMakeFiles/CharA.dir/src/CACore/CAJoint.o
 
 CMakeFiles/CharA.dir/src/CACore/CAGrapheNode.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/CACore/CAGrapheNode.o: ../src/CACore/CAGrapheNode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_6)
+CMakeFiles/CharA.dir/src/CACore/CAGrapheNode.o: src/CACore/CAGrapheNode.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/CACore/CAGrapheNode.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/CACore/CAGrapheNode.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/CACore/CAGrapheNode.cpp
 
@@ -191,8 +191,8 @@ CMakeFiles/CharA.dir/src/CACore/CAGrapheNode.o.provides: CMakeFiles/CharA.dir/sr
 CMakeFiles/CharA.dir/src/CACore/CAGrapheNode.o.provides.build: CMakeFiles/CharA.dir/src/CACore/CAGrapheNode.o
 
 CMakeFiles/CharA.dir/src/CACore/CAMotionGraph.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/CACore/CAMotionGraph.o: ../src/CACore/CAMotionGraph.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_7)
+CMakeFiles/CharA.dir/src/CACore/CAMotionGraph.o: src/CACore/CAMotionGraph.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/CACore/CAMotionGraph.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/CACore/CAMotionGraph.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/CACore/CAMotionGraph.cpp
 
@@ -214,8 +214,8 @@ CMakeFiles/CharA.dir/src/CACore/CAMotionGraph.o.provides: CMakeFiles/CharA.dir/s
 CMakeFiles/CharA.dir/src/CACore/CAMotionGraph.o.provides.build: CMakeFiles/CharA.dir/src/CACore/CAMotionGraph.o
 
 CMakeFiles/CharA.dir/src/CAViewer/Viewer.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/CAViewer/Viewer.o: ../src/CAViewer/Viewer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_8)
+CMakeFiles/CharA.dir/src/CAViewer/Viewer.o: src/CAViewer/Viewer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/CAViewer/Viewer.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/CAViewer/Viewer.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/CAViewer/Viewer.cpp
 
@@ -237,8 +237,8 @@ CMakeFiles/CharA.dir/src/CAViewer/Viewer.o.provides: CMakeFiles/CharA.dir/src/CA
 CMakeFiles/CharA.dir/src/CAViewer/Viewer.o.provides.build: CMakeFiles/CharA.dir/src/CAViewer/Viewer.o
 
 CMakeFiles/CharA.dir/src/CAViewer/CAViewer.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/CAViewer/CAViewer.o: ../src/CAViewer/CAViewer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_9)
+CMakeFiles/CharA.dir/src/CAViewer/CAViewer.o: src/CAViewer/CAViewer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/CAViewer/CAViewer.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/CAViewer/CAViewer.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/CAViewer/CAViewer.cpp
 
@@ -260,8 +260,8 @@ CMakeFiles/CharA.dir/src/CAViewer/CAViewer.o.provides: CMakeFiles/CharA.dir/src/
 CMakeFiles/CharA.dir/src/CAViewer/CAViewer.o.provides.build: CMakeFiles/CharA.dir/src/CAViewer/CAViewer.o
 
 CMakeFiles/CharA.dir/src/CAViewer/BVHTools.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/CAViewer/BVHTools.o: ../src/CAViewer/BVHTools.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_10)
+CMakeFiles/CharA.dir/src/CAViewer/BVHTools.o: src/CAViewer/BVHTools.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/CAViewer/BVHTools.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/CAViewer/BVHTools.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/CAViewer/BVHTools.cpp
 
@@ -283,8 +283,8 @@ CMakeFiles/CharA.dir/src/CAViewer/BVHTools.o.provides: CMakeFiles/CharA.dir/src/
 CMakeFiles/CharA.dir/src/CAViewer/BVHTools.o.provides.build: CMakeFiles/CharA.dir/src/CAViewer/BVHTools.o
 
 CMakeFiles/CharA.dir/src/CAViewer/main.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/CAViewer/main.o: ../src/CAViewer/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_11)
+CMakeFiles/CharA.dir/src/CAViewer/main.o: src/CAViewer/main.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/CAViewer/main.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/CAViewer/main.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/CAViewer/main.cpp
 
@@ -306,8 +306,8 @@ CMakeFiles/CharA.dir/src/CAViewer/main.o.provides: CMakeFiles/CharA.dir/src/CAVi
 CMakeFiles/CharA.dir/src/CAViewer/main.o.provides.build: CMakeFiles/CharA.dir/src/CAViewer/main.o
 
 CMakeFiles/CharA.dir/src/Tools.o: CMakeFiles/CharA.dir/flags.make
-CMakeFiles/CharA.dir/src/Tools.o: ../src/Tools.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles $(CMAKE_PROGRESS_12)
+CMakeFiles/CharA.dir/src/Tools.o: src/Tools.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CharA.dir/src/Tools.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CharA.dir/src/Tools.o -c /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/src/Tools.cpp
 
@@ -393,6 +393,6 @@ CMakeFiles/CharA.dir/clean:
 .PHONY : CMakeFiles/CharA.dir/clean
 
 CMakeFiles/CharA.dir/depend:
-	cd /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/build/CMakeFiles/CharA.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro /home/aurelgrivollat/Etudes/Aurel_Master/Master2/Animation3D/AnimPerso/CharAnim_m2pro/CMakeFiles/CharA.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/CharA.dir/depend
 

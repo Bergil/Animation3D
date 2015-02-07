@@ -30,6 +30,7 @@ namespace chara {
 		BVH();
 		//! Constructor
 		BVH(const std::string& filename, bool enableEndSite=false);
+		BVH(const BVH & bvh);
 		//! Destructor
 		~BVH();
 
