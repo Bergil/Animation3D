@@ -49,9 +49,6 @@ void CAViewer::draw()
 	end = std::chrono::system_clock::now();
 	std::chrono::duration<double> elapsed_seconds = end-start;
 	auto framemilliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(elapsed_seconds);
-	
-    
-	
 		
 	const CAGrapheNode& actualGN = m_motiongraph->getGrapheNode()[m_idGrapheNode];
 	const CAGrapheNode& oldGN = m_motiongraph->getGrapheNode()[ancien];

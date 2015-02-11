@@ -48,7 +48,7 @@ void CAViewer::init(int argc, char **argv)
 	if(argc > 1 && strcmp(argv[1], "NF") == 0)
 	for(int i = 0; i < longueur; i++){
 		for(int j = 0; j < largeur; j++){
-			water.setG(i,j, sin((i+j)*3.1415926/longueur/2)*5);
+			water.setG(i,j, sin((i+j)*3.1415926/longueur/2)*10);
 			
 		}
 	}
