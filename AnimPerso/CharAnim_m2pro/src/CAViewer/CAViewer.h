@@ -48,6 +48,9 @@ protected :
 	std::mt19937 gen;
 	/// skeleton (build from the mocap-BVH data m_bvh)
 	chara::CASkeleton	m_skel;
+	int ancien = 0;
+	float percent;
+	int target = 0;
 
 
 

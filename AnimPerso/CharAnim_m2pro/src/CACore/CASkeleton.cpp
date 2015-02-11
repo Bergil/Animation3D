@@ -33,6 +33,17 @@ void CASkeleton::setPose(const BVH& bvh, const int framenumber){
 	}
 }
 
+void CASkeleton::setPose(const BVH& bvh1, const int framenumber1, const BVH& bvh2, const int framenumber2, float percent){
+	CASkeleton tmp1(bvh1); 
+	CASkeleton tmp2(bvh2);
+	tmp1.setPose(bvh1, framenumber1);
+	tmp2.setPose(bvh2, framenumber2);
+	for(unsigned int i = 0; i < m_joint.size(); i++){
+		m_joint[i].setT_local2world(tmp1.getJoints()[i].getT_local2world() * (1-percent) + tmp2.getJoints()[i].getT_local2world() * percent);
+		m_joint[i].setQ_local2world(math::TQuaternion<float>::slerp(tmp1.getJoints()[i].getQ_local2world(), tmp2.getJoints()[i].getQ_local2world(), percent));
+	}
+}
+
 void CASkeleton::setPose(int indice, chara::BVHJoint * jbvh, const int framenumber){
 	
 	math::TQuaternion<float> Q;

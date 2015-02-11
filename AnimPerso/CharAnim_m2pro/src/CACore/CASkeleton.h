@@ -25,6 +25,7 @@ namespace chara {
 
 		   //! Positionne ce squelette dans la position n du BVH
 		   void setPose(const BVH& bvh, const int framenumber);
+		   void setPose(const BVH& bvh1, const int framenumber1, const BVH& bvh2, const int framenumber2, float percent);
 		   void setPose(int indice, chara::BVHJoint * jbvh, const int framenumber);
 		   //! Calcule la distance entre deux postures
 		   //! precond: les deux squelettes doivent avoir le 
@@ -34,7 +35,7 @@ namespace chara {
 		   //! Affiche en OpenGL le squelette, les liens entre les articulations
 		   //! sont donnés par le champ m_fatherId de CAJoint
 		   void drawGL() const;
-		   
+		   const std::vector<chara::CAJoint>& getJoints() const {return m_joint;}
 
 		private:
 		   //! L'ensemble des articulations.

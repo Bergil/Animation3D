@@ -35,6 +35,7 @@ namespace chara {
 			   void setQ_local2world(math::TQuaternion<float>  quat) {q_local2world = quat;}
 			   math::Vec3<float>  getT_local2world() const {return t_local2world;}
 			   void setT_local2world(math::Vec3<float>  vec) {t_local2world = vec;}
+			   void multT_local2world(float percent) {t_local2world *= percent;}
 			   
 	}; 
 }

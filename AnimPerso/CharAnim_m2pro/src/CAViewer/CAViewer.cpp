@@ -35,8 +35,6 @@ void CAViewer::init()
 	std::string fn_front = "../data/danse.bvh";
 	std::vector<std::string> listeBVH = {"../data/motionGraph/dancer.bvh",
 											"../data/motionGraph/frapper.bvh",
-											//"../data/motionGraph/marcher.bvh",
-											"../data/motionGraph/null.bvh",
 											"../data/motionGraph/pond.bvh"};
 	
 	m_motiongraph.reset(new CAMotionGraph(listeBVH, 200)); //ici la distance 
@@ -52,13 +50,27 @@ void CAViewer::draw()
 	std::chrono::duration<double> elapsed_seconds = end-start;
 	auto framemilliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(elapsed_seconds);
 	
-    float animTime = m_motiongraph.get()->getBVH()[m_motiongraph->getGrapheNode()[m_idGrapheNode].getIdBVH()]->getFrameTime()*1000;
-    if( framemilliseconds.count() >= animTime){
-		start = std::chrono::system_clock::now();
-		animate();
-	}
+    
+	
+		
 	const CAGrapheNode& actualGN = m_motiongraph->getGrapheNode()[m_idGrapheNode];
-	m_skel.setPose(*m_motiongraph.get()->getBVH()[actualGN.getIdBVH()], actualGN.getNumFrame());
+	const CAGrapheNode& oldGN = m_motiongraph->getGrapheNode()[ancien];
+	if(oldGN.getIdBVH() != actualGN.getIdBVH()){
+		percent = framemilliseconds.count()/1000.0;
+		if(percent >= 1){
+			start = std::chrono::system_clock::now();
+			animate();
+		}
+	}
+	else{
+		float animTime = m_motiongraph.get()->getBVH()[m_motiongraph->getGrapheNode()[m_idGrapheNode].getIdBVH()]->getFrameTime()*1000;
+		if( framemilliseconds.count() >= animTime){
+			start = std::chrono::system_clock::now();
+			animate();
+		}
+		percent = framemilliseconds.count()/animTime; 
+	}
+	m_skel.setPose(*m_motiongraph.get()->getBVH()[oldGN.getIdBVH()], oldGN.getNumFrame(), *m_motiongraph.get()->getBVH()[actualGN.getIdBVH()], actualGN.getNumFrame(), percent);
 	m_skel.drawGL();	
     glPopMatrix();
 
@@ -210,6 +222,15 @@ void CAViewer::keyPressed(unsigned char key, int x, int y)
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		handled = true;
 	}
+	else
+	if (key>='0' && key <= '9')
+	{
+		target = key - '0';
+		
+		cout<< "quidditch to "<<target <<endl;
+		if (target >= m_motiongraph.get()->getBVH().size())
+			target = m_motiongraph.get()->getBVH().size() - 1; //successfully clamped 
+	}
 	if (!handled)
 	{
 		Viewer::keyPressed(key,x,y);
@@ -260,8 +281,16 @@ void CAViewer::specialKeyPressed(int key, int x, int y)
 void CAViewer::animate()
 {
 	const CAGrapheNode& actualGN = m_motiongraph->getGrapheNode()[m_idGrapheNode];
+	ancien = m_idGrapheNode;	
 	if(actualGN.getListIdNext().size() > 0){
-		std::uniform_int_distribution<> dis(0, actualGN.getListIdNext().size()-1 );
-		m_idGrapheNode = actualGN.getListIdNext()[dis(gen)];
+		m_idGrapheNode = actualGN.getListIdNext()[0];
+		if(target != actualGN.getIdBVH()){
+			for(auto i : actualGN.getListIdNext()){
+				if(m_motiongraph->getGrapheNode()[i].getIdBVH() == target){
+					m_idGrapheNode = i;
+					break;
+				}
+			}
+		}
 	}
 }

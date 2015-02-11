@@ -15,7 +15,7 @@ void CAMotionGraph::remplissageGraphe(float distance){
 	for(unsigned int i = 0; i < m_BVH.size(); i++){
 		unsigned int size = m_GrapheNode.size();
 		for(int j =0; j< m_BVH[i].get()->getNumFrame(); j++){
-			m_GrapheNode.push_back(CAGrapheNode(i, j, (size+j+1)%m_BVH[i].get()->getNumFrame()));
+			m_GrapheNode.push_back(CAGrapheNode(i, j, size+((j+1)%m_BVH[i].get()->getNumFrame())));
 		}
 	}
 
